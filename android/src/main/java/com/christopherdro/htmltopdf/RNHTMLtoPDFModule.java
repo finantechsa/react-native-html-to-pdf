@@ -45,7 +45,7 @@ public class RNHTMLtoPDFModule extends ReactContextBaseJavaModule {
       if (options.hasKey("directory") && options.getString("directory").equals("docs")) {
         String state = Environment.getExternalStorageState();
           File path = (Environment.MEDIA_MOUNTED.equals(state)) ?
-                  new File(Environment.getExternalStoragePublicDirectory(), Environment.DIRECTORY_DOCUMENTS)
+                  new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS))
                   : new File(mReactContext.getFilesDir(), Environment.DIRECTORY_DOCUMENTS);
 
         if (!path.exists()) path.mkdir();
